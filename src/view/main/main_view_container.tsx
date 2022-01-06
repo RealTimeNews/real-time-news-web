@@ -11,5 +11,7 @@ export default function MainViewContainer() {
     '일요일'
   ];
 
-  return <MainViewPresenter dayList={dayList} />;
+  const videoURL = 'https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8';
+
+  return <MainViewPresenter dayList={dayList} videoURL={videoURL} />;
 }
