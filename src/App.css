@@ -1,13 +1,17 @@
 .App {
   text-align: center;
+  height: 100vh;
+  width: 100%;
+  background-color: #e0f8e6;
 }
 
 .navHeader {
-  background: black;
+  background: #f5effb;
   width: 100%;
   display: flex;
-  color: white;
-  padding: 20px;
+  color: black;
+  padding-top: 30px;
+  padding-bottom: 30px;
   font-weight: 600;
   font-size: 20px;
 }
@@ -27,6 +31,11 @@
 
 .navIcon {
   margin-left: 30px;
+}
+
+.navIconRight {
+  margin-left: auto;
+  margin-right: 30px;
 }
 
 .App-logo {
@@ -62,4 +71,27 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.MainComponent {
+  margin-top: 50px;
+  width: 100%;
+}
+
+.MainContent {
+  margin-top: 5px;
+}
+
+.NavButton {
+  margin: 10px;
+  border-radius: 15%;
+  background-color: lightgray;
+  color: black;
+}
+
+.Button {
+  margin: 10px;
+  border-radius: 15%;
+  background-color: #61dafb;
+  color: black;
 }

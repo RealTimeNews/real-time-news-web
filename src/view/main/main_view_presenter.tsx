@@ -29,7 +29,7 @@ const MainViewPresenter = ({ dayList, videoURL }: Props) => {
     return <li key={idx}>{day}</li>;
   });
   return (
-    <div className="rightComponent">
+    <div className="MainComponent">
       <b>메인페이지</b>
       <div>
         <video
