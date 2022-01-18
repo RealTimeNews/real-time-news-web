@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react';
 import '../../App';
+import styles from '../../css/style.module.scss';
 
 interface Props {
   toggleSignUpPopup: () => void;
@@ -23,60 +24,56 @@ const SignUpPresenter = ({ toggleSignUpPopup }: Props) => {
     console.log(userId, userPw);
   };
   return (
-    <div className="PopupComponent">
-      <div className="PopupHeader">
-        <p className="PopupTitle">회원가입 팝업창</p>
-        <button
-          type="button"
-          className="ButtonClose"
-          onClick={toggleSignUpPopup}
-        >
-          닫기
-        </button>
+    <div className={styles['signUp-popup']}>
+      <div className={styles['popup-header']}>
+        <p className={styles['popup-tit']}>회원가입 팝업창</p>
       </div>
-      <div className="PopupBody">
-        <div className="PopupContent">
-          <span>아이디 : </span>
-          <input
-            ref={(ref) => {
-              refInputId.current = ref;
-            }}
-            type="text"
-            placeholder="아이디를 입력하세요."
-            value={userId}
-            onChange={handleChangeInputId}
-          ></input>
-        </div>
-        <div className="PopupContent">
-          <span>비번 : </span>
-          <input
-            ref={(ref) => {
-              refInputPw.current = ref;
-            }}
-            type="password"
-            placeholder="비번을 입력하세요."
-            value={userPw}
-            onChange={handleChangeInputPw}
-          ></input>
+      <div className={styles['popup-body']}>
+        <div className={styles['popup-content-list']}>
+          <div className={styles['popup-content-item']}> 아이디 </div>
+          <div className={styles['popup-content-item']}>
+            <input
+              ref={(ref) => {
+                refInputId.current = ref;
+              }}
+              type="text"
+              placeholder="아이디를 입력하세요."
+              value={userId}
+              onChange={handleChangeInputId}
+            ></input>
+          </div>
+          <div className={styles['popup-content-item']}> 비밀번호 </div>
+          <div className={styles['popup-content-item']}>
+            <input
+              ref={(ref) => {
+                refInputId.current = ref;
+              }}
+              type="password"
+              placeholder="비밀번호를 입력하세요."
+              value={userPw}
+              onChange={handleChangeInputPw}
+            ></input>
+          </div>
+          <div className={styles['popup-content-item']}> 기타등등 1 </div>
+          <div className={styles['popup-content-item']}> 기타등등 2 </div>
+          <div className={styles['popup-content-item']}> 기타등등 3 </div>
         </div>
       </div>
-      <div className="PopUpFooter">
+      <div className={styles['popup-footer']}>
         <button
           disabled={userId.length <= 0 || userPw.length <= 0}
-          type="button"
-          className="PopupButton"
+          className={styles['popup-button']}
           onClick={doSignUp}
         >
           회원가입
         </button>
-        {/* <button
+        <button
           disabled={false}
-          type="button"
-          className="PopupButton"
+          className={styles['popup-button']}
           onClick={toggleSignUpPopup}
         >
-          취소
-        </button> */}
+          창닫기
+        </button>
       </div>
     </div>
   );
