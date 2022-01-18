@@ -1,5 +1,6 @@
 import Hls from 'hls.js';
 import { useEffect, useRef, useState } from 'react';
+import styles from '../../css/style.module.scss';
 
 interface Props {
   dayList: string[];
@@ -28,8 +29,9 @@ const MainViewPresenter = ({ dayList, videoURL }: Props) => {
   const render = dayList.map((day, idx) => {
     return <li key={idx}>{day}</li>;
   });
+
   return (
-    <div className="MainComponent">
+    <div className={styles['main-component']}>
       <b>메인페이지</b>
       <div>
         <video

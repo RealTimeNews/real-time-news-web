@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react';
+import styles from '../../css/style.module.scss';
 import '../../App';
 
 interface Props {
@@ -24,7 +25,7 @@ const LoginPresenter = ({ toggleSignUpPopup }: Props) => {
   };
 
   return (
-    <div className="MainComponent">
+    <div className={styles['main-component']}>
       <h3>로그인 페이지</h3>
       <div>
         <div className="MainContent">

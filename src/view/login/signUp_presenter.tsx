@@ -26,37 +26,42 @@ const SignUpPresenter = ({ toggleSignUpPopup }: Props) => {
   return (
     <div className={styles['signUp-popup']}>
       <div className={styles['popup-header']}>
-        <p className={styles['popup-tit']}>회원가입 팝업창</p>
+        <p className={styles['popup-title']}>회원가입 </p>
       </div>
       <div className={styles['popup-body']}>
         <div className={styles['popup-content-list']}>
-          <div className={styles['popup-content-item']}> 아이디 </div>
           <div className={styles['popup-content-item']}>
+            <div className={styles['popup-content-item-title']}> 아이디 </div>
             <input
               ref={(ref) => {
                 refInputId.current = ref;
               }}
+              className={styles['popup-content-item-input']}
               type="text"
               placeholder="아이디를 입력하세요."
               value={userId}
               onChange={handleChangeInputId}
             ></input>
           </div>
-          <div className={styles['popup-content-item']}> 비밀번호 </div>
           <div className={styles['popup-content-item']}>
+            <div className={styles['popup-content-item-title']}> 비밀번호 </div>
             <input
               ref={(ref) => {
-                refInputId.current = ref;
+                refInputPw.current = ref;
               }}
+              className={styles['popup-content-item-input']}
               type="password"
               placeholder="비밀번호를 입력하세요."
               value={userPw}
               onChange={handleChangeInputPw}
             ></input>
           </div>
-          <div className={styles['popup-content-item']}> 기타등등 1 </div>
-          <div className={styles['popup-content-item']}> 기타등등 2 </div>
-          <div className={styles['popup-content-item']}> 기타등등 3 </div>
+          <div className={styles['popup-content-item']}>
+            <div className={styles['popup-content-item-title']}> 기타1 </div>
+          </div>
+          <div className={styles['popup-content-item']}>
+            <div className={styles['popup-content-item-title']}> 기타2 </div>
+          </div>
         </div>
       </div>
       <div className={styles['popup-footer']}>

@@ -1,5 +1,3 @@
-import React from 'react';
-import logo from './logo.svg';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 import MainViewContainer from './view/main/main_view_container';
@@ -10,7 +8,9 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <div className="navHeader">
-          {/* <h1>리얼타임뉴스</h1> */}
+          <div className="navIcon">
+            <h1>리얼타임뉴스</h1>
+          </div>
           <div className="navIcon">
             <Link to="./">
               <button className="NavButton"> Home </button>

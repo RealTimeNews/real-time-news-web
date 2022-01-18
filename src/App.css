@@ -2,18 +2,17 @@
   text-align: center;
   height: 100vh;
   width: 100%;
-  background-color: #e0f8e6;
+  background-color: #efeff6;
 }
 
 .navHeader {
-  background: #f5effb;
+  background: #c8caf4;
   width: 100%;
   display: flex;
   color: black;
-  padding-top: 30px;
-  padding-bottom: 30px;
   font-weight: 600;
   font-size: 20px;
+  border: solid 1px #dfe2e5;
 }
 
 .list {
@@ -30,12 +29,18 @@
 }
 
 .navIcon {
+  display: flex;
+  justify-content: center;
+  position: relative;
   margin-left: 30px;
+  align-items: center;
 }
 
 .navIconRight {
+  display: flex;
+  justify-content: center;
   margin-left: auto;
-  margin-right: 30px;
+  align-items: center;
 }
 
 .App-logo {
@@ -84,6 +89,7 @@
 
 .NavButton {
   margin: 10px;
+  width: 65px;
   border-radius: 15%;
   background-color: lightgray;
   color: black;

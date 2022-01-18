@@ -1,3 +1,7 @@
+.main-component {
+  margin-top: 50px;
+}
+
 .signUp-popup {
   position: fixed;
   top: 50%;
@@ -14,10 +18,9 @@
     padding: 20px 20px 0 20px;
     background-color: #455dfe;
     border-radius: 13px 13px 0 0;
-    .popup-tit {
-      flex: 1;
+    .popup-title {
       color: #fff;
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 500;
     }
   }
@@ -29,21 +32,27 @@
     background-color: #fff;
 
     .popup-content-list {
-      list-style: inside decimal;
       width: 100%;
-      font-size: 12px;
-      line-height: 1.57;
-      letter-spacing: -0.28px;
-      color: #1a1a1a;
       text-align: center;
 
       .popup-content-item {
         position: relative;
-        font-size: 25px;
-        font-weight: 450;
-        line-height: 1.57;
-        letter-spacing: -0.28px;
         color: #1a1a1a;
+        border-bottom: solid 1px #dfe2e5;
+
+        .popup-content-item-title {
+          font-size: 25px;
+          font-family: Arial, Helvetica, sans-serif;
+          font-weight: 500;
+          line-height: 1.7;
+          letter-spacing: -2px;
+        }
+        .popup-content-item-input {
+          width: 200px;
+          font-size: 15px;
+          text-align: center;
+          margin-bottom: 10px;
+        }
       }
     }
   }
@@ -54,13 +63,15 @@
     border: solid 1px #dfe2e5;
     background-color: #fff;
     text-align: center;
+    border-radius: 0 0 13px 13px;
 
     .popup-button {
       height: 30px;
-      margin-top: 10px;
+      margin-top: 5px;
       margin-left: 20px;
       margin-right: 20px;
       background-color: greenyellow;
+      border-radius: 10px;
     }
   }
 }
