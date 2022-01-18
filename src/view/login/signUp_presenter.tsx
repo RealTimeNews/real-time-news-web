@@ -1,11 +1,11 @@
-import React, { useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import '../../App';
 
 interface Props {
   toggleSignUpPopup: () => void;
 }
 
-const LoginPresenter = ({ toggleSignUpPopup }: Props) => {
+const SignUpPresenter = ({ toggleSignUpPopup }: Props) => {
   const refInputId = useRef<HTMLInputElement | null>(null);
   const refInputPw = useRef<HTMLInputElement | null>(null);
   const [userId, setUserId] = useState('');
@@ -19,15 +19,23 @@ const LoginPresenter = ({ toggleSignUpPopup }: Props) => {
     setUserPw(e.target.value);
   };
 
-  const doLogin = () => {
+  const doSignUp = () => {
     console.log(userId, userPw);
   };
-
   return (
-    <div className="MainComponent">
-      <h3>로그인 페이지</h3>
-      <div>
-        <div className="MainContent">
+    <div className="PopupComponent">
+      <div className="PopupHeader">
+        <p className="PopupTitle">회원가입 팝업창</p>
+        <button
+          type="button"
+          className="ButtonClose"
+          onClick={toggleSignUpPopup}
+        >
+          닫기
+        </button>
+      </div>
+      <div className="PopupBody">
+        <div className="PopupContent">
           <span>아이디 : </span>
           <input
             ref={(ref) => {
@@ -39,7 +47,7 @@ const LoginPresenter = ({ toggleSignUpPopup }: Props) => {
             onChange={handleChangeInputId}
           ></input>
         </div>
-        <div className="MainContent">
+        <div className="PopupContent">
           <span>비번 : </span>
           <input
             ref={(ref) => {
@@ -51,24 +59,26 @@ const LoginPresenter = ({ toggleSignUpPopup }: Props) => {
             onChange={handleChangeInputPw}
           ></input>
         </div>
+      </div>
+      <div className="PopUpFooter">
         <button
           disabled={userId.length <= 0 || userPw.length <= 0}
           type="button"
-          className="Button"
-          onClick={doLogin}
-        >
-          로그인
-        </button>
-        <button
-          disabled={false}
-          type="button"
-          className="Button"
-          onClick={toggleSignUpPopup}
+          className="PopupButton"
+          onClick={doSignUp}
         >
           회원가입
         </button>
+        {/* <button
+          disabled={false}
+          type="button"
+          className="PopupButton"
+          onClick={toggleSignUpPopup}
+        >
+          취소
+        </button> */}
       </div>
     </div>
   );
 };
-export default LoginPresenter;
+export default SignUpPresenter;

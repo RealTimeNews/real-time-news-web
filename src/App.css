@@ -95,3 +95,61 @@
   background-color: #61dafb;
   color: black;
 }
+
+.PopupHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: #61dafb;
+}
+
+.PopupTitle {
+  color: #3a3a3a;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.ButtonClose {
+  position: relative;
+  right: 0px;
+  overflow: hidden;
+  width: 50px;
+  height: 30px;
+  color: gray;
+  font-size: 4;
+}
+
+.PopupComponent {
+  width: auto;
+  height: auto;
+}
+
+.PopupBody {
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+  background-color: greenyellow;
+}
+
+.PopupContent {
+  color: #3a3a3a;
+  font-size: 15px;
+  font-weight: 500;
+  padding-bottom: 40px;
+}
+
+.PopUpFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.PopupButton {
+  position: relative;
+  left: 35%;
+  right: 45%;
+  background-color: #61dafb;
+  color: black;
+}
