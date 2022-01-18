@@ -1,0 +1,66 @@
+.signUp-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  border-radius: 13px;
+  box-shadow: 10px 17.3px 50px 0 rgba(17, 18, 18, 0.2);
+
+  .popup-header {
+    display: flex;
+    height: 60px;
+    margin-bottom: 0;
+    padding: 20px 20px 0 20px;
+    background-color: #455dfe;
+    border-radius: 13px 13px 0 0;
+    .popup-tit {
+      flex: 1;
+      color: #fff;
+      font-size: 20px;
+      font-weight: 500;
+    }
+  }
+
+  .popup-body {
+    display: flex;
+    height: 300px;
+    border: solid 1px #dfe2e5;
+    background-color: #fff;
+
+    .popup-content-list {
+      list-style: inside decimal;
+      width: 100%;
+      font-size: 12px;
+      line-height: 1.57;
+      letter-spacing: -0.28px;
+      color: #1a1a1a;
+      text-align: center;
+
+      .popup-content-item {
+        position: relative;
+        font-size: 25px;
+        font-weight: 450;
+        line-height: 1.57;
+        letter-spacing: -0.28px;
+        color: #1a1a1a;
+      }
+    }
+  }
+
+  .popup-footer {
+    position: relative;
+    height: 40px;
+    border: solid 1px #dfe2e5;
+    background-color: #fff;
+    text-align: center;
+
+    .popup-button {
+      height: 30px;
+      margin-top: 10px;
+      margin-left: 20px;
+      margin-right: 20px;
+      background-color: greenyellow;
+    }
+  }
+}
