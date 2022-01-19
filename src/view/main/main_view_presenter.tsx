@@ -3,15 +3,13 @@ import { useEffect, useRef, useState } from 'react';
 import styles from '../../css/style.module.scss';
 
 interface Props {
-  dayList: string[];
   videoURL: string;
 }
 
-const MainViewPresenter = ({ dayList, videoURL }: Props) => {
+const MainViewPresenter = ({ videoURL }: Props) => {
   const videoRef = useRef<HTMLVideoElement | null>(null);
-  const [mainURL, setMainURL] = useState(videoURL);
+  const [mainURL] = useState(videoURL);
 
-  console.log(mainURL);
   useEffect(() => {
     if (!videoRef.current) return undefined;
 
@@ -25,10 +23,6 @@ const MainViewPresenter = ({ dayList, videoURL }: Props) => {
       hls.detachMedia();
     };
   }, [mainURL]);
-
-  const render = dayList.map((day, idx) => {
-    return <li key={idx}>{day}</li>;
-  });
 
   return (
     <div className={styles['main-component']}>
