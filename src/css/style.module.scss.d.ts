@@ -10,6 +10,7 @@ export type Styles = {
   'popup-content-item-input': string;
   'popup-footer': string;
   'popup-button': string;
+  'side-view-component': string;
 };
 
 export type ClassNames = keyof Styles;

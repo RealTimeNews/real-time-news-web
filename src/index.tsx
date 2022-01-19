@@ -7,13 +7,13 @@ import HandleViewContainer from './view/handle_view_container';
 import { MainStoreProvider } from './util/store_util';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <MainStoreProvider>
-      <BrowserRouter>
-        <HandleViewContainer />
-      </BrowserRouter>
-    </MainStoreProvider>
-  </React.StrictMode>,
+  // <React.StrictMode>
+  <MainStoreProvider>
+    <BrowserRouter>
+      <HandleViewContainer />
+    </BrowserRouter>
+  </MainStoreProvider>,
+  // </React.StrictMode>,
   document.getElementById('root')
 );
 

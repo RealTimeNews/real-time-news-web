@@ -27,6 +27,8 @@ const MainViewPresenter = ({ videoURL }: Props) => {
   return (
     <div className={styles['main-component']}>
       <b>메인페이지</b>
+      <br />
+      <br />
       <div>
         <video
           ref={(ref) => {
