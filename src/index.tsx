@@ -1,12 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from 'react-router-dom';
+import HandleViewContainer from './view/handle_view_container';
+import { MainStoreProvider } from './util/store_util';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <MainStoreProvider>
+      <BrowserRouter>
+        <HandleViewContainer />
+      </BrowserRouter>
+    </MainStoreProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
