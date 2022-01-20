@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom';
 import '../../App';
+import styles from '../../css/style.module.scss';
 
 const MainHeaderPresenter = () => {
   return (
     <div className="navHeader">
       <div className="navIcon">
-        <h1>리얼타임뉴스</h1>
+        <h1 className={styles['main-title']}>Real Time News</h1>
       </div>
       <div className="navIcon">
         <Link to="./">

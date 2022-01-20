@@ -1,9 +1,64 @@
+.app {
+  text-align: center;
+  height: 100vh;
+  width: 99%;
+  background-color: #efeff6;
+}
+
+.main-title {
+  font-size: 40px;
+  background: linear-gradient(to left top, gray, black);
+  color: transparent;
+  background-clip: text;
+}
+
 .main-component {
   float: left;
   margin-top: 8px;
-  width: 74%;
+  width: 73%;
   height: 85vh;
-  border: solid 1px black;
+  border: 1px solid gray;
+  text-align: center;
+  .main-wrap {
+    margin: 5px auto;
+    background-color: rgb(243, 243, 236);
+    width: 50%;
+    border: 1px solid gray;
+    border-radius: 5%;
+    height: 50vh;
+    .main-content {
+      margin: 5px auto;
+      display: table;
+      table-layout: fixed;
+      width: 100%;
+      text-align: center;
+    }
+    .main-content-row {
+      margin: 30px auto;
+      width: 70%;
+
+      + .main-content-row {
+        margin-top: -25px;
+      }
+    }
+
+    .main-content-input {
+      width: 100%;
+      height: 4vh;
+    }
+  }
+  .main-button-wrap {
+    margin: 250px auto;
+    height: 10vh;
+    .main-button {
+      // background-color: blue;
+      border: 1px solid gray;
+      border-radius: 20%;
+      margin: 10px 10px 10px 10px;
+      width: 20%;
+      height: 5vh;
+    }
+  }
 }
 
 .signUp-popup {
@@ -20,10 +75,10 @@
     height: 60px;
     margin-bottom: 0;
     padding: 20px 20px 0 20px;
-    background-color: #455dfe;
+    background-color: ivory;
     border-radius: 13px 13px 0 0;
     .popup-title {
-      color: #fff;
+      color: black;
       font-size: 18px;
       font-weight: 500;
     }
@@ -31,8 +86,9 @@
 
   .popup-body {
     display: flex;
-    height: 300px;
+    height: 350px;
     border: solid 1px #dfe2e5;
+    border-bottom: 0px;
     background-color: #fff;
 
     .popup-content-list {
@@ -45,7 +101,7 @@
         border-bottom: solid 1px #dfe2e5;
 
         .popup-content-item-title {
-          font-size: 25px;
+          font-size: 20px;
           font-family: Arial, Helvetica, sans-serif;
           font-weight: 500;
           line-height: 1.7;
@@ -53,8 +109,8 @@
         }
         .popup-content-item-input {
           width: 200px;
+          height: 3vh;
           font-size: 15px;
-          text-align: center;
           margin-bottom: 10px;
         }
       }
@@ -63,19 +119,19 @@
 
   .popup-footer {
     position: relative;
-    height: 40px;
+    height: 70px;
     border: solid 1px #dfe2e5;
+    border-top: 0px;
     background-color: #fff;
     text-align: center;
     border-radius: 0 0 13px 13px;
 
     .popup-button {
-      height: 30px;
-      margin-top: 5px;
-      margin-left: 20px;
-      margin-right: 20px;
-      background-color: greenyellow;
-      border-radius: 10px;
+      border: 1px solid gray;
+      border-radius: 20%;
+      margin: 10px 10px 10px 10px;
+      width: 20%;
+      height: 5vh;
     }
   }
 }
@@ -85,5 +141,49 @@
   margin-top: 8px;
   width: 25%;
   height: 85vh;
-  border: solid 1px black;
+  border: solid 1px gray;
+
+  .side-view-chatting-list {
+    margin: 10px auto;
+    width: 90%;
+    height: 75vh;
+    border: solid 1px gray;
+
+    .side-view-chatting-item {
+      margin: 10px auto;
+      width: 85%;
+      .side-view-chatting-item-header {
+        width: 100%;
+        text-align: left;
+        font-size: 13px;
+        font-family: 400;
+        margin-bottom: 5px;
+      }
+      .side-view-chatting-item-content {
+        width: 100%;
+        text-align: left;
+        font-size: 15px;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .side-view-chatting-wrap {
+    margin: auto;
+    width: 95%;
+    height: 5vh;
+
+    .side-view-chatting-input {
+      display: inline-block;
+      margin: auto;
+      width: 70%;
+      height: 3vh;
+    }
+    .side-view-chatting-button {
+      display: inline-block;
+      margin: 0 5px auto;
+      width: 20%;
+      height: 3vh;
+    }
+  }
 }
