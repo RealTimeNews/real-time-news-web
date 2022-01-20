@@ -26,48 +26,52 @@ const LoginPresenter = ({ toggleSignUpPopup }: Props) => {
 
   return (
     <div className={styles['main-component']}>
-      <h3>로그인 페이지</h3>
-      <div>
-        <div className="MainContent">
-          <span>아이디 : </span>
-          <input
-            ref={(ref) => {
-              refInputId.current = ref;
-            }}
-            type="text"
-            placeholder="아이디를 입력하세요."
-            value={userId}
-            onChange={handleChangeInputId}
-          ></input>
+      <h3 className={styles['main-title']}>Real Time News</h3>
+      <div className={styles['main-wrap']}>
+        <div className={styles['main-content']}>
+          <div className={styles['main-content-row']}>
+            <input
+              className={styles['main-content-input']}
+              ref={(ref) => {
+                refInputId.current = ref;
+              }}
+              type="text"
+              placeholder="아이디를 입력하세요."
+              value={userId}
+              onChange={handleChangeInputId}
+            ></input>
+          </div>
+          <div className={styles['main-content-row']}>
+            <input
+              className={styles['main-content-input']}
+              ref={(ref) => {
+                refInputPw.current = ref;
+              }}
+              type="password"
+              placeholder="비번을 입력하세요."
+              value={userPw}
+              onChange={handleChangeInputPw}
+            ></input>
+          </div>
         </div>
-        <div className="MainContent">
-          <span>비번 : </span>
-          <input
-            ref={(ref) => {
-              refInputPw.current = ref;
-            }}
-            type="password"
-            placeholder="비번을 입력하세요."
-            value={userPw}
-            onChange={handleChangeInputPw}
-          ></input>
+        <div className={styles['main-button-wrap']}>
+          <button
+            disabled={userId.length <= 0 || userPw.length <= 0}
+            type="button"
+            className={styles['main-button']}
+            onClick={doLogin}
+          >
+            로그인
+          </button>
+          <button
+            disabled={false}
+            type="button"
+            className={styles['main-button']}
+            onClick={toggleSignUpPopup}
+          >
+            회원가입
+          </button>
         </div>
-        <button
-          disabled={userId.length <= 0 || userPw.length <= 0}
-          type="button"
-          className="Button"
-          onClick={doLogin}
-        >
-          로그인
-        </button>
-        <button
-          disabled={false}
-          type="button"
-          className="Button"
-          onClick={toggleSignUpPopup}
-        >
-          회원가입
-        </button>
       </div>
     </div>
   );

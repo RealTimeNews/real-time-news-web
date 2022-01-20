@@ -9,8 +9,10 @@ interface Props {
 const SignUpPresenter = ({ toggleSignUpPopup }: Props) => {
   const refInputId = useRef<HTMLInputElement | null>(null);
   const refInputPw = useRef<HTMLInputElement | null>(null);
+  const refInputNickname = useRef<HTMLInputElement | null>(null);
   const [userId, setUserId] = useState('');
   const [userPw, setUserPw] = useState('');
+  const [userNickname, setUserNickname] = useState('');
 
   const handleChangeInputId = (e: React.ChangeEvent<HTMLInputElement>) => {
     setUserId(e.target.value);
@@ -20,8 +22,14 @@ const SignUpPresenter = ({ toggleSignUpPopup }: Props) => {
     setUserPw(e.target.value);
   };
 
+  const handleChangeInputNickname = (
+    e: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    setUserNickname(e.target.value);
+  };
+
   const doSignUp = () => {
-    console.log(userId, userPw);
+    console.log(userId, userPw, userNickname);
   };
   return (
     <div className={styles['signUp-popup']}>
@@ -57,16 +65,25 @@ const SignUpPresenter = ({ toggleSignUpPopup }: Props) => {
             ></input>
           </div>
           <div className={styles['popup-content-item']}>
-            <div className={styles['popup-content-item-title']}> 기타1 </div>
-          </div>
-          <div className={styles['popup-content-item']}>
-            <div className={styles['popup-content-item-title']}> 기타2 </div>
+            <div className={styles['popup-content-item-title']}> 닉네임 </div>
+            <input
+              ref={(ref) => {
+                refInputNickname.current = ref;
+              }}
+              className={styles['popup-content-item-input']}
+              type="text"
+              placeholder="닉네임을 입력하세요."
+              value={userNickname}
+              onChange={handleChangeInputNickname}
+            ></input>
           </div>
         </div>
       </div>
       <div className={styles['popup-footer']}>
         <button
-          disabled={userId.length <= 0 || userPw.length <= 0}
+          disabled={
+            userId.length <= 0 || userPw.length <= 0 || userNickname.length <= 0
+          }
           className={styles['popup-button']}
           onClick={doSignUp}
         >
