@@ -19,6 +19,9 @@ export const MainStoreProvider = ({ children, onInit }: Props) => {
 
 export const useStore = () => {
   const store = useContext(storeContext);
+  if (!store) {
+    throw new Error('Cannot upload Store');
+  }
   return store;
 };
 

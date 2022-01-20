@@ -1,5 +1,8 @@
+import { observer } from 'mobx-react';
 import SideViewPresenter from './side_view_presenter';
 
-export default function SideViewContainer() {
+const SideViewContainer = observer(() => {
   return <SideViewPresenter />;
-}
+});
+
+export default SideViewContainer;

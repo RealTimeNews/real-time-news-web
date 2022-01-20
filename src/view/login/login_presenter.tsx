@@ -4,9 +4,10 @@ import '../../App';
 
 interface Props {
   toggleSignUpPopup: () => void;
+  doLogin: (id: string, pw: string) => void;
 }
 
-const LoginPresenter = ({ toggleSignUpPopup }: Props) => {
+const LoginPresenter = ({ toggleSignUpPopup, doLogin }: Props) => {
   const refInputId = useRef<HTMLInputElement | null>(null);
   const refInputPw = useRef<HTMLInputElement | null>(null);
   const [userId, setUserId] = useState('');
@@ -20,8 +21,8 @@ const LoginPresenter = ({ toggleSignUpPopup }: Props) => {
     setUserPw(e.target.value);
   };
 
-  const doLogin = () => {
-    console.log(userId, userPw);
+  const doJoin = () => {
+    doLogin(userId, userPw);
   };
 
   return (
@@ -59,7 +60,7 @@ const LoginPresenter = ({ toggleSignUpPopup }: Props) => {
             disabled={userId.length <= 0 || userPw.length <= 0}
             type="button"
             className={styles['main-button']}
-            onClick={doLogin}
+            onClick={doJoin}
           >
             로그인
           </button>

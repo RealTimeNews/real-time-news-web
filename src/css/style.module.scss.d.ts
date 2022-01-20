@@ -1,5 +1,10 @@
 export type Styles = {
   app: string;
+  'nav-icon': string;
+  'nav-icon-right': string;
+  'nav-header': string;
+  'nav-title': string;
+  'nav-title-content': string;
   'main-title': string;
   'main-component': string;
   'main-wrap': string;

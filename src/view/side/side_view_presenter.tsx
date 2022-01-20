@@ -18,17 +18,19 @@ const SideViewPresenter = () => {
   };
 
   const doChatting = () => {
-    chattingId.current += 1;
-    const newText = {
-      id: chattingId.current,
-      userName: store?.loginData.getUserName(),
-      text: inputText
-    };
-    setTotalChattingList((totalChattingList) =>
-      totalChattingList.concat(newText)
-    );
-    setInputText('');
-    refInputText.current?.focus();
+    if (store.loginData.userNickname !== '') {
+      chattingId.current += 1;
+      const newText = {
+        id: chattingId.current,
+        userName: store.loginData.userNickname,
+        text: inputText
+      };
+      setTotalChattingList((totalChattingList) =>
+        totalChattingList.concat(newText)
+      );
+      setInputText('');
+      refInputText.current?.focus();
+    } else alert('로그인하셈요');
   };
 
   const onKeyPress = (e: any) => {
