@@ -1,5 +1,5 @@
 export interface ChattingInfo {
   id: number;
-  userName?: string;
+  userName: string;
   text: string;
 }

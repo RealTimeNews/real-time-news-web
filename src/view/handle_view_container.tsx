@@ -4,10 +4,11 @@ import MainViewContainer from './main/main_view_container';
 import MainHeaderContainer from './main/main_header_container';
 import SideViewContainer from './side/side_view_container';
 import styles from '../css/style.module.scss';
+import { observer } from 'mobx-react';
 
 // ToDo : Code Spliting 을 위한 @loadable/component 작업 진행하기.
 
-export default function HandleViewContainer() {
+const HandleViewContainer = observer(() => {
   return (
     <div className={styles['app']}>
       <MainHeaderContainer />
@@ -19,4 +20,6 @@ export default function HandleViewContainer() {
       <SideViewContainer />
     </div>
   );
-}
+});
+
+export default HandleViewContainer;
