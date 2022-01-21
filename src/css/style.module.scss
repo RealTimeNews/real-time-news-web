@@ -101,6 +101,68 @@ input:focus {
       height: 5vh;
     }
   }
+
+  .hashtag-wrap {
+    margin: 5px auto;
+    width: 90%;
+    border: 1px solid gray;
+    border-radius: 70px;
+    min-height: 65vh;
+    background-color: ivory;
+
+    .hashtag-content {
+      margin: 20px 10px 10px 10px;
+      display: inline-block;
+      border: 1px solid gray;
+      border-radius: 20px;
+      width: 20%;
+      height: 6vh;
+
+      .hashtag-content-title-wrap {
+        margin: 1px 0px 0px 5px;
+        width: 90%;
+
+        .hashtag-content-title {
+          display: inline-block;
+          width: 40%;
+          .hashtag-content-title-sport {
+            border-radius: 30px;
+            border: 1px solid gray;
+            background-color: red;
+          }
+          .hashtag-content-title-economy {
+            border-radius: 30px;
+            border: 1px solid gray;
+            background-color: yellow;
+          }
+          .hashtag-content-title-science {
+            border-radius: 30px;
+            border: 1px solid gray;
+            background-color: blue;
+          }
+          .hashtag-content-title-entertainment {
+            border-radius: 30px;
+            border: 1px solid gray;
+            background-color: green;
+          }
+        }
+        .hashtag-content-count {
+          display: inline-block;
+          width: 40%;
+        }
+      }
+      .hashtag-content-item {
+        width: 80%;
+        margin: 5px auto;
+        text-align: center;
+        font-size: 18px;
+        font-weight: 550;
+        border: 1px solid gray;
+        border-radius: 20px;
+        color: black;
+      }
+    }
+  }
 }
 
 .signUp-popup {

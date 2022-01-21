@@ -3,3 +3,10 @@ export interface ChattingInfo {
   userName: string;
   text: string;
 }
+
+export interface HashTagInfo {
+  id: number;
+  hashTag: string;
+  filter: string;
+  count: number;
+}
