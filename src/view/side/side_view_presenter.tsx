@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import styles from '../../css/style.module.scss';
 import { ChattingInfo } from '../../util/interface_util';
 import { useStore } from '../../util/store_util';
@@ -6,6 +7,8 @@ import ChattingPresenter from '../chatting/chatting_presenter';
 
 const SideViewPresenter = () => {
   const store = useStore();
+  const history = useHistory();
+
   const [totalChattingList, setTotalChattingList] = useState<ChattingInfo[]>(
     []
   );
@@ -30,7 +33,11 @@ const SideViewPresenter = () => {
       );
       setInputText('');
       refInputText.current?.focus();
-    } else alert('로그인하셈요');
+    } else {
+      alert('로그인이 필요한 기능입니다.');
+      setInputText('');
+      history.push('/login');
+    }
   };
 
   const onKeyPress = (e: any) => {
