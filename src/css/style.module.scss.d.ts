@@ -31,6 +31,16 @@ export type Styles = {
   'side-view-chatting-button': string;
   'side-view-chatting-item-header': string;
   'side-view-chatting-item-content': string;
+  'hashtag-wrap': string;
+  'hashtag-content': string;
+  'hashtag-content-title': string;
+  'hashtag-content-title-wrap': string;
+  'hashtag-content-title-sport': string;
+  'hashtag-content-title-economy': string;
+  'hashtag-content-title-science': string;
+  'hashtag-content-title-entertainment': string;
+  'hashtag-content-count': string;
+  'hashtag-content-item': string;
 };
 
 export type ClassNames = keyof Styles;
