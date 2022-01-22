@@ -1,12 +1,13 @@
 import { observer } from 'mobx-react';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import styles from '../../../css/style.module.scss';
 import { HashTagInfo } from '../../../util/interface_util';
+import HashTagInputPresenter from '../../hashtag/hashtag_input_presenter';
 import HashTagPresenter from '../../hashtag/hashtag_presenter';
 import MainViewFilterHeaderPresenter from './main_view_filter_header_presenter';
 
 const MainViewFilterContainer = observer(() => {
-  const [totalHashTagInfo] = useState<HashTagInfo[]>([
+  const [totalHashTagInfo, setTotalHashTagInfo] = useState<HashTagInfo[]>([
     {
       id: 1,
       hashTag: '메시',
@@ -69,28 +70,63 @@ const MainViewFilterContainer = observer(() => {
     }
   ]);
 
+  const hashTagId = useRef(totalHashTagInfo.length);
   const [filter, setFilter] = useState('All');
   const [totalHashTagList, setTotalHashTagList] = useState<HashTagInfo[]>([]);
+  const [isHashTagPopupVisible, setIsHashTagPopupVisible] = useState(false);
 
   const handleFilter = (filter: string) => {
     setFilter(filter);
   };
 
+  const sortList = (list: HashTagInfo[]) => {
+    list.sort((a: HashTagInfo, b: HashTagInfo) => {
+      return b.count - a.count;
+    });
+    return list;
+  };
+
+  const toggleHashTagInputPopup = () => {
+    setIsHashTagPopupVisible(!isHashTagPopupVisible);
+  };
+
+  const createHashTag = (
+    hashTagFilter: string,
+    hashTagName: string,
+    hashTagCount: number
+  ) => {
+    hashTagId.current += 1;
+
+    const newHashTag: HashTagInfo = {
+      id: hashTagId.current,
+      filter: hashTagFilter,
+      hashTag: hashTagName,
+      count: hashTagCount
+    };
+
+    setTotalHashTagInfo((totalHashTagInfo) =>
+      totalHashTagInfo.concat(newHashTag)
+    );
+  };
+
   useEffect(() => {
     if (filter === 'All') {
-      setTotalHashTagList(totalHashTagInfo);
+      setTotalHashTagList(sortList(totalHashTagInfo));
     } else {
       const newHashTagList: HashTagInfo[] = totalHashTagInfo.filter(
         (hashTag: HashTagInfo) => hashTag.filter === filter
       );
-      setTotalHashTagList(newHashTagList);
+      setTotalHashTagList(sortList(newHashTagList));
     }
   }, [filter, totalHashTagInfo]);
 
   return (
     <div className={styles['main-component']}>
       <h2>필터페이지</h2>
-      <MainViewFilterHeaderPresenter handleFilter={handleFilter} />
+      <MainViewFilterHeaderPresenter
+        handleFilter={handleFilter}
+        toggleHashTagInputPopup={toggleHashTagInputPopup}
+      />
       <div className={styles['hashtag-wrap']}>
         {totalHashTagList.map((hashTagInfo: HashTagInfo) => {
           return (
@@ -98,6 +134,13 @@ const MainViewFilterContainer = observer(() => {
           );
         })}
       </div>
+      {isHashTagPopupVisible && (
+        <HashTagInputPresenter
+          isVisible={isHashTagPopupVisible}
+          toggleHashTagInputPopup={toggleHashTagInputPopup}
+          createHashTag={createHashTag}
+        />
+      )}
     </div>
   );
 });
