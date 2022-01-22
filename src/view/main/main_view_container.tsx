@@ -7,7 +7,7 @@ const MainViewContainer = observer(() => {
   const [totalHashTagList, setTotalHashTagList] = useState<HashTagInfo[]>([]);
   const count = useRef(0);
 
-  const getDataList: HashTagInfo[] = [
+  const [getDataList] = useState<HashTagInfo[]>([
     {
       id: 1,
       hashTag: '메시',
@@ -63,18 +63,16 @@ const MainViewContainer = observer(() => {
       count: 38
     },
     {
-      id: 9,
+      id: 10,
       hashTag: '김종국 논란',
       filter: '연예',
       count: 40
     }
-  ];
-
-  let timer: ReturnType<typeof setTimeout>;
+  ]);
 
   useEffect(() => {
     if (count.current < getDataList.length) {
-      timer = setInterval(() => {
+      let timer: ReturnType<typeof setTimeout> = setInterval(() => {
         setTotalHashTagList((totalHashTagList) =>
           totalHashTagList.concat(getDataList[count.current])
         );
@@ -85,7 +83,7 @@ const MainViewContainer = observer(() => {
         clearTimeout(timer);
       };
     }
-  }, [totalHashTagList]);
+  }, [totalHashTagList, getDataList]);
 
   return <MainViewPresenter hashTagList={totalHashTagList} />;
 });

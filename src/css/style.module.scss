@@ -102,6 +102,25 @@ input:focus {
     }
   }
 
+  .hashtag-filter-header {
+    // background-color: ivory;
+    margin: 0px 150px auto;
+    // border: 1px solid gray;
+    border-radius: 15px;
+    width: 25%;
+    height: 3vh;
+
+    .hashtag-filter-header-combobox {
+      background-color: ivory;
+      border: 1px solid gray;
+      border-radius: 10px;
+      margin: 0px auto;
+      width: 80%;
+      height: 3vh;
+      text-align: center;
+    }
+  }
+
   .hashtag-wrap {
     margin: 5px auto;
     width: 90%;

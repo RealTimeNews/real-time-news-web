@@ -41,6 +41,8 @@ export type Styles = {
   'hashtag-content-title-entertainment': string;
   'hashtag-content-count': string;
   'hashtag-content-item': string;
+  'hashtag-filter-header': string;
+  'hashtag-filter-header-combobox': string;
 };
 
 export type ClassNames = keyof Styles;
