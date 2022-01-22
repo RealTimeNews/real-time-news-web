@@ -66,7 +66,7 @@ input:focus {
     background-color: rgb(243, 243, 236);
     width: 50%;
     border: 1px solid gray;
-    border-radius: 5%;
+    border-radius: 15px;
     height: 50vh;
     .main-content {
       margin: 5px auto;
@@ -103,21 +103,30 @@ input:focus {
   }
 
   .hashtag-filter-header {
-    // background-color: ivory;
-    margin: 0px 150px auto;
-    // border: 1px solid gray;
+    margin: 0px auto;
     border-radius: 15px;
-    width: 25%;
+    width: 80%;
     height: 3vh;
 
     .hashtag-filter-header-combobox {
+      float: left;
       background-color: ivory;
       border: 1px solid gray;
       border-radius: 10px;
       margin: 0px auto;
-      width: 80%;
+      width: 30%;
       height: 3vh;
       text-align: center;
+    }
+    .hashtag-filter-header-input {
+      margin: auto;
+      float: right;
+      background-color: darkgray;
+      width: 8%;
+      height: 3vh;
+      border: 1px solid gray;
+      border-radius: 10px;
+      font-weight: 550;
     }
   }
 
@@ -126,7 +135,7 @@ input:focus {
     width: 90%;
     border: 1px solid gray;
     border-radius: 70px;
-    min-height: 65vh;
+    min-height: 70vh;
     background-color: ivory;
 
     .hashtag-content {

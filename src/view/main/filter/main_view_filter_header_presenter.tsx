@@ -3,9 +3,13 @@ import styles from '../../../css/style.module.scss';
 
 interface Props {
   handleFilter: (filter: string) => void;
+  toggleHashTagInputPopup: () => void;
 }
 
-const MainViewFilterHeaderPresenter = ({ handleFilter }: Props) => {
+const MainViewFilterHeaderPresenter = ({
+  handleFilter,
+  toggleHashTagInputPopup
+}: Props) => {
   const filterRef = useRef<HTMLSelectElement | null>(null);
 
   const changeFilter = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -30,6 +34,13 @@ const MainViewFilterHeaderPresenter = ({ handleFilter }: Props) => {
           <option value="연예">연예</option>
         </select>
       </form>
+      <button
+        className={styles['hashtag-filter-header-input']}
+        type="button"
+        onClick={toggleHashTagInputPopup}
+      >
+        + 추가
+      </button>
     </div>
   );
 };

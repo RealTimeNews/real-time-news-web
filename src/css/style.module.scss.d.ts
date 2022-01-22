@@ -43,6 +43,7 @@ export type Styles = {
   'hashtag-content-item': string;
   'hashtag-filter-header': string;
   'hashtag-filter-header-combobox': string;
+  'hashtag-filter-header-input': string;
 };
 
 export type ClassNames = keyof Styles;
