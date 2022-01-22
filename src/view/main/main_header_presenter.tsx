@@ -19,8 +19,8 @@ const MainHeaderPresenter = ({ userNickname, onClickLogout }: Props) => {
         </Link>
       </div>
       <div className={styles['nav-icon']}>
-        <Link to="./1">
-          <button className="NavButton"> 1 </button>
+        <Link to="./filter">
+          <button className="NavButton"> Filter </button>
         </Link>
       </div>
       {userNickname !== '' ? (

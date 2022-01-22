@@ -8,6 +8,9 @@ import { observer } from 'mobx-react';
 // Code Spliting 을 위한 @loadable/component 작업.
 const MainComponent = loadable(() => import('./main/main_view_container'));
 const LoginComponent = loadable(() => import('./login/login_container'));
+const MainFilterComponent = loadable(
+  () => import('./main/filter/main_view_filter_container')
+);
 
 const HandleViewContainer = observer(() => {
   return (
@@ -15,7 +18,7 @@ const HandleViewContainer = observer(() => {
       <MainHeaderContainer />
       <Switch>
         <Route exact path="/" component={MainComponent} />
-        <Route path="/1" component={MainComponent} />
+        <Route path="/filter" component={MainFilterComponent} />
         <Route path="/login" component={LoginComponent} />
       </Switch>
       <SideViewContainer />
