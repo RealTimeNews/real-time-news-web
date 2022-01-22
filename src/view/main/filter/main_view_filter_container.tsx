@@ -1,6 +1,7 @@
 import { observer } from 'mobx-react';
 import { useEffect, useRef, useState } from 'react';
 import styles from '../../../css/style.module.scss';
+import { filterNumber } from '../../../util/common_util';
 import { HashTagInfo } from '../../../util/interface_util';
 import HashTagInputPresenter from '../../hashtag/hashtag_input_presenter';
 import HashTagPresenter from '../../hashtag/hashtag_presenter';
@@ -81,7 +82,10 @@ const MainViewFilterContainer = observer(() => {
 
   const sortList = (list: HashTagInfo[]) => {
     list.sort((a: HashTagInfo, b: HashTagInfo) => {
-      return b.count - a.count;
+      if (filterNumber(a.filter) === filterNumber(b.filter)) {
+        return b.count - a.count;
+      }
+      return filterNumber(a.filter) - filterNumber(b.filter);
     });
     return list;
   };

@@ -121,7 +121,7 @@ input:focus {
     .hashtag-filter-header-input {
       margin: auto;
       float: right;
-      background-color: darkgray;
+      background-color: cornsilk;
       width: 8%;
       height: 3vh;
       border: 1px solid gray;
@@ -145,7 +145,7 @@ input:focus {
       border-radius: 20px;
       width: 20%;
       height: 6vh;
-
+      background-color: cornsilk;
       .hashtag-content-title-wrap {
         margin: 1px 0px 0px 5px;
         width: 90%;
@@ -177,6 +177,7 @@ input:focus {
         .hashtag-content-count {
           display: inline-block;
           width: 40%;
+          font-weight: 500;
         }
       }
       .hashtag-content-item {
